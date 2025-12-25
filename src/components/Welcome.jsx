@@ -93,10 +93,10 @@ const Welcome = () => {
         const titleCleanump = setupTextHover(titleRef.current, "title");
         const subTitleCleanup = setupTextHover(subTitle.current, "subtitle");
 
-        return () => {
+        // return () => {
             titleCleanump();
             subTitleCleanup();
-        }
+        // }
     }, []);
     return (
         <section id="welcome">
