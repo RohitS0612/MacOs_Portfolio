@@ -90,12 +90,16 @@ const Welcome = () => {
     const titleRef = useRef(null);
     const subTitle = useRef();
     useGSAP(() => {
-        const titleCleanump = setupTextHover(titleRef.current, "title");
-        const subTitleCleanup = setupTextHover(subTitle.current, "subtitle");
+        // const titleCleanump = setupTextHover(titleRef.current, "title");
+        // const subTitleCleanup = setupTextHover(subTitle.current, "subtitle");
+
+      setupTextHover(titleRef.current, "title");
+         setupTextHover(subTitle.current, "subtitle");
+
 
         // return () => {
-            titleCleanump();
-            subTitleCleanup();
+        //     titleCleanump();
+        //     subTitleCleanup();
         // }
     }, []);
     return (
