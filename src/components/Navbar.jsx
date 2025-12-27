@@ -10,12 +10,12 @@ const Navbar = () => {
             setTime(dayjs());
         }, 1000);
         return () => clearInterval(interval);
-    },[]);
+    }, []);
 
     return (
         <nav>
             <div>
-                <img src="/images/logo.svg" alt="logo" />
+                <img src="/images/logo.svg" alt="logo"/>
                 <p className="font-bold">Rohit's Portfolio</p>
                 <ul>
                     {navLinks.map((item) => (
@@ -24,7 +24,7 @@ const Navbar = () => {
                 </ul>
 
             </div>
-            <div >
+            <div>
                 <ul>
                     {navIcons.map(({id, img}) => (
                         <li key={id}>

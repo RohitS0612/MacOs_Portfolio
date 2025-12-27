@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import {create} from 'zustand';
 import {immer} from "zustand/middleware/immer";
 import {INITIAL_Z_INDEX, WINDOW_CONFIG} from "../constants/index.js";
 
