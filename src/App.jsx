@@ -3,6 +3,7 @@ import Welcome from "./components/Welcome.jsx";
 import Dock from "./components/Dock.jsx";
 import gsap from "gsap";
 import Terminal from "./windows/Terminal.jsx";
+import Safari from "./windows/Safari.jsx";
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
             <Welcome/>
             <Dock/>
             <Terminal/>
+            <Safari/>
         </main>
     )
 }
