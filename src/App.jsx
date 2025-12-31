@@ -4,6 +4,7 @@ import Dock from "./components/Dock.jsx";
 import gsap from "gsap";
 import Terminal from "./windows/Terminal.jsx";
 import Safari from "./windows/Safari.jsx";
+import Resume from "./windows/Resume.jsx";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
             <Dock/>
             <Terminal/>
             <Safari/>
+            <Resume/>
         </main>
     )
 }
