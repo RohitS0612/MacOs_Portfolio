@@ -21,7 +21,7 @@ const Navbar = () => {
                 <p className="font-bold">Rohit's Portfolio</p>
                 <ul>
                     {navLinks.map((item) => (
-                        <li key={item.id} onClick={() => openWindow(type)}><p>{item.name}</p></li>
+                        <li key={item.id} onClick={() => openWindow(item.type)}><p>{item.name}</p></li>
                     ))}
                 </ul>
 
