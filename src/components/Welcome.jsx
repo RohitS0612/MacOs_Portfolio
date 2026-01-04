@@ -20,32 +20,6 @@ const renderText = (text, className, baseWeight = 300) => {
     ));
 };
 
-// const setupTextHover = (container, type) => {
-//     if(!container) return;
-//
-//     const letters = container.querySelectorAll("span");
-//     const {min, max, default: base} = FONT_WEIGHT[type];
-//
-//     const animateLetter = (letter, weight, duration = 0.25) => {
-//         return gsap.to(letter, { duration, ease: "power2.out", fontVariationSettings:`'wght'   ${weight}` });
-//     };
-//
-//     const handleMouseMove = (event) => {
-//         const {left} = container.getBoundingClientRect();
-//         const mouseX = event.clientX - left;
-//
-//         letters.forEach((letter) => {
-//             const {left: l, weight: w} = letter.getBoundingClientRect();
-//             const distance = Math.abs(mouseX - (l - left + w / 2));
-//             const intensity = Math.exp( - (distance ** 2) / 2000 );
-//
-//             animateLetter(letter, min + (max - min) * intensity);
-//         })
-//     };
-//
-//     container.addEventListener("mousemove", handleMouseMove);
-// };
-
 const setupTextHover = (container, type) => {
     if (!container) return () => {
     };
@@ -105,10 +79,10 @@ const Welcome = () => {
     }, []);
     return (
         <section id="welcome">
-            <p ref={subTitle}>{renderText("Hey I'm Rohit! Welcome to my", "text-3xl font-georama", 200)} </p>
-            <h1 ref={titleRef} className="mt-7">{renderText("Portfolio", "text-9xl italic font-georama")}</h1>
+            <p ref={subTitle} style={{color:"#131c22ff"}}>{renderText("Hey I'm Rohit! Welcome to my", "text-3xl font-georama", 200)} </p>
+            <h1 ref={titleRef} className="mt-7" style={{color:"#243642"}}>{renderText("Portfolio", "text-9xl italic font-georama")}</h1>
             <div className="small-screen">
-                <p>This Portfolio is designed for desktop/tablet screens only.</p>
+                <p style={{color:"red"}}>This Portfolio is designed for desktop/tablet screens only.</p>
             </div>
         </section>
     );
