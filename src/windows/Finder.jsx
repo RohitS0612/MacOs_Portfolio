@@ -31,7 +31,7 @@ const Finder = () => {
             key={item.id}
             onClick={() => setActiveLocation(item)}
             className={clsx(
-              item.id === activeLocation.id ? "active" : "not-cactive"
+              item.id === activeLocation.id ? "active" : "not-active"
             )}
           >
             <img src={item.icon} className="w-4" alt="item.name" />
@@ -49,7 +49,7 @@ const Finder = () => {
         <Search className="icon" />
       </div>
 
-      <div className="bg-white flex h-full">
+      <div className="flex h-full">
         <div className="sidebar">
           {renderList("Favorites", Object.values(locations))}
           {renderList("Work", locations?.work?.children)}
@@ -64,7 +64,7 @@ const Finder = () => {
           onClick={() => openItem(item)}
           >
             <img src={item.icon} alt={item.name} />
-            <p>{item.name}</p>
+            <p className="text-sm font-medium truncate" style={{color: 'var(--text-color)'}}>{item.name}</p>
           </li>
           )
         })}

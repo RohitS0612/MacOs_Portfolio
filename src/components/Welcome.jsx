@@ -79,10 +79,10 @@ const Welcome = () => {
     }, []);
     return (
         <section id="welcome">
-            <p ref={subTitle} style={{color:"#131c22ff"}}>{renderText("Hey I'm Rohit! Welcome to my", "text-3xl font-georama", 200)} </p>
-            <h1 ref={titleRef} className="mt-7" style={{color:"#243642"}}>{renderText("Portfolio", "text-9xl italic font-georama")}</h1>
-            <div className="small-screen">
-                <p style={{color:"red"}}>This Portfolio is designed for desktop/tablet screens only.</p>
+            {/* <p ref={subTitle} style={{color:"#1A2228"}}>{renderText("Hey I'm Rohit! Welcome to my", "text-3xl font-georama", 200)} </p> */}
+            <h1 ref={titleRef} className="mt-7" style={{color:"#1A2228"}}>{renderText("hello", "text-9xl italic font-georama")}</h1>
+            <div className="small-screen" style={{color:"red"}}>
+                <p>This Portfolio is designed for desktop/tablet screens only.</p>
             </div>
         </section>
     );

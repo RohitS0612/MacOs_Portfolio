@@ -11,11 +11,22 @@ import  Image  from "./windows/Image.jsx";
 import Contact from "./windows/Contact.jsx";
 import Home from "./components/Home.jsx";
 import Photos from "./windows/Photos.jsx";
+import useThemeStore from "./store/theme.js";
+import { useEffect } from "react";
 
 function App() {
+    const { theme } = useThemeStore();
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme]);
 
     return (
-        <main>
+        <main className={theme}>
             <Navbar/>
             <Welcome/>
             <Dock/>
