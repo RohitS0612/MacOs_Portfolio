@@ -104,21 +104,21 @@ const techStack = [
         category: "Frontend",
         items: ["React.js", "Next.js", "TypeScript"],
     },
-    {
-        category: "Mobile",
-        items: ["React Native", "Expo"],
-    },
+    // {
+    //     category: "Mobile",
+    //     items: ["React Native", "Expo"],
+    // },
     {
         category: "Styling",
-        items: ["Tailwind CSS", "Sass", "CSS"],
+        items: ["Tailwind CSS", "Material UI", "CSS"],
     },
     {
         category: "Backend",
-        items: ["Node.js", "Express", "NestJS", "Hono"],
+        items: ["Node.js", "Express", "NestJS"],
     },
     {
         category: "Database",
-        items: ["MongoDB", "PostgreSQL"],
+        items: ["MongoDB", "MySQL"],
     },
     {
         category: "Dev Tools",
@@ -132,28 +132,28 @@ const socials = [
         text: "Github",
         icon: "/icons/github.svg",
         bg: "#f4656b",
-        link: "https://github.com/JavaScript-Mastery-Pro",
+        link: "https://github.com/RohitS0612",
     },
-    {
-        id: 2,
-        text: "Platform",
-        icon: "/icons/atom.svg",
-        bg: "#4bcb63",
-        link: "https://jsmastery.com/",
-    },
+    // {
+    //     id: 2,
+    //     text: "Platform",
+    //     icon: "/icons/atom.svg",
+    //     bg: "#4bcb63",
+    //     link: "https://jsmastery.com/",
+    // },
     {
         id: 3,
         text: "Twitter/X",
         icon: "/icons/twitter.svg",
         bg: "#ff866b",
-        link: "https://x.com/jsmasterypro",
+        link: "https://x.com/rohit_shet52221?t=YO0rar7W5PJCXu7jk5S2pQ&s=09",
     },
     {
         id: 4,
         text: "LinkedIn",
         icon: "/icons/linkedin.svg",
         bg: "#05b6f6",
-        link: "https://www.linkedin.com/company/javascriptmastery/posts/?feedView=all",
+        link: "https://www.linkedin.com/in/rohit-shetake-3a7728315/",
     },
 ];
 
