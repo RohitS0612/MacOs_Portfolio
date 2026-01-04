@@ -261,7 +261,7 @@ const WORK_LOCATION = {
                     kind: "file",
                     fileType: "img",
                     position: "top-52 right-80",
-                    imageUrl: "/images/project-1.png",
+                    imageurl: "/images/project-1.png",
                 },
                 {
                     id: 5,
@@ -314,7 +314,7 @@ const WORK_LOCATION = {
                     kind: "file",
                     fileType: "img",
                     position: "top-52 left-80",
-                    imageUrl: "/images/project-2.png",
+                    imageurl: "/images/project-2.png",
                 },
                 {
                     id: 5,
@@ -367,7 +367,7 @@ const WORK_LOCATION = {
                     kind: "file",
                     fileType: "img",
                     position: "top-52 right-80",
-                    imageUrl: "/images/project-3.png",
+                    imageurl: "/images/project-3.png",
                 },
                 {
                     id: 5,
@@ -397,7 +397,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-10 left-5",
-            imageUrl: "/images/adrian.jpg",
+            imageurl: "/images/adrian.jpg",
         },
         {
             id: 2,
@@ -406,7 +406,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-28 right-72",
-            imageUrl: "/images/adrian-2.jpg",
+            imageurl: "/images/adrian-2.jpg",
         },
         {
             id: 3,
@@ -415,7 +415,7 @@ const ABOUT_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-52 left-80",
-            imageUrl: "/images/adrian-3.jpeg",
+            imageurl: "/images/adrian-3.jpeg",
         },
         {
             id: 4,
@@ -469,7 +469,7 @@ const TRASH_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-10 left-10",
-            imageUrl: "/images/trash-1.png",
+            imageurl: "/images/trash-1.png",
         },
         {
             id: 2,
@@ -478,7 +478,7 @@ const TRASH_LOCATION = {
             kind: "file",
             fileType: "img",
             position: "top-40 left-80",
-            imageUrl: "/images/trash-2.png",
+            imageurl: "/images/trash-2.png",
         },
     ],
 };
