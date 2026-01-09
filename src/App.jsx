@@ -13,6 +13,8 @@ import Home from "./components/Home.jsx";
 import Photos from "./windows/Photos.jsx";
 import useThemeStore from "./store/theme.js";
 import { useEffect } from "react";
+import MobileDock from "./components/MobileDock.jsx";
+import MobileHeader from "./components/MobileHeader.jsx";
 
 function App() {
     const { theme } = useThemeStore();
@@ -27,9 +29,11 @@ function App() {
 
     return (
         <main className={theme}>
+            <MobileHeader />
             <Navbar/>
             <Welcome/>
             <Dock/>
+            <MobileDock />
             <Terminal/>
             <Safari/>
             <Resume/>

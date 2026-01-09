@@ -1,11 +1,14 @@
 import useWindowStore from "../store/window";
 import WindowControls from "../components/WindowControls";
-import { Search, Mail } from "lucide-react";
+import { Search, Mail, Menu } from "lucide-react";
 import { gallery, photosLinks } from "../constants";
 import WindowWrapper from "../hoc/WindowWrapper";
+import { useState } from "react";
+import clsx from "clsx";
 
 const Photos = () => {
   const { openWindow } = useWindowStore();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <>
@@ -14,6 +17,9 @@ const Photos = () => {
         <WindowControls target="photos" />
 
         <div className="w-full flex justify-end items-center gap-3 text-gray-500">
+            <button className="sm:hidden" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+                <Menu size={16} />
+            </button>
           <Mail className="icon" />
           <Search className="icon" />
         </div>
@@ -22,7 +28,7 @@ const Photos = () => {
       {/* WINDOW CONTENT */}
       <div className="flex w-full h-full">
         {/* SIDEBAR */}
-        <aside className="sidebar">
+        <aside className={clsx("sidebar", !isSidebarOpen && "max-sm:hidden")}>
           <h2>Photos</h2>
 
           <ul>

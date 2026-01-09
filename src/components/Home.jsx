@@ -1,36 +1,27 @@
-import { useGSAP } from "@gsap/react";
-import { locations } from "../constants"
-import { Draggable } from "gsap/Draggable";
-import clsx from "clsx";
+import { dockApps } from "../constants";
 import useWindowStore from "../store/window";
-import useLocationStore from "../store/location";
-
-const projects = locations.work?.children ?? [];
 
 const Home = () => {
-    const { setActiveLocation } = useLocationStore();
-    const {openWindow} = useWindowStore();
+    const { openWindow } = useWindowStore();
 
-    const handleOpenProjectFinder = (project) => {
-        setActiveLocation(project);
-        openWindow("finder");
-    }
+    const handleOpenApp = (app) => {
+        if (app.canOpen) {
+            openWindow(app.id);
+        }
+    };
 
-    useGSAP(() => {
-        Draggable.create(".folder");
-    }, []);
-  return (
-    <section id="home">
-        <ul>
-            {projects.map(( project) => (
-                <li key={project.id} className={clsx("group folder", project.windowPosition)} onClick={() => handleOpenProjectFinder(project)}>
-                    <img src="/images/folder.png" alt={project.name}/>
-                    <p style={{color:"#1A2228", fontStyle:"bold"}}>{project.name}</p>
-                </li>
-            ))}
-        </ul>
-    </section>
-  )
-}
+    return (
+        <section id="home" className="sm:hidden">
+            <div className="p-4 grid grid-cols-4 gap-4">
+                {dockApps.map((app) => (
+                    <div key={app.id} className="flex flex-col items-center gap-1" onClick={() => handleOpenApp(app)}>
+                        <img src={`/images/${app.icon}`} alt={app.name} className="w-16 h-16" />
+                        <p className="text-white text-xs text-center">{app.name}</p>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+};
 
-export default Home
+export default Home;

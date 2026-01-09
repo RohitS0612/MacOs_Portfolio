@@ -3,11 +3,12 @@ import {useLayoutEffect, useRef} from "react";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 import {Draggable} from "gsap/Draggable";
+import { X } from "lucide-react";
 
 gsap.registerPlugin(Draggable);
 const WindowWrapper = (Component, windowKey) => {
     const Wrapped = (props) => {
-        const {focusWindow, windows} = useWindowStore();
+        const {focusWindow, windows, closeWindow} = useWindowStore();
         const {isOpen, zIndex} = windows[windowKey];
         const ref = useRef(null);
         useGSAP(() => {
@@ -15,19 +16,29 @@ const WindowWrapper = (Component, windowKey) => {
             if (!el || !isOpen) return;
 
             el.style.display = "block";
-            gsap.fromTo(
-                el,
-                {scale: 0.8, opacity: 0, y: 40},
-                {scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out"},
-            );
+            if (window.matchMedia("(max-width: 640px)").matches) {
+                gsap.fromTo(
+                    el,
+                    {y: "100%"},
+                    {y: "0%", duration: 0.4, ease: "power3.out"},
+                );
+            } else {
+                gsap.fromTo(
+                    el,
+                    {scale: 0.8, opacity: 0, y: 40},
+                    {scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out"},
+                );
+            }
         }, [isOpen]);
 
         useGSAP(() => {
-            const el = ref.current;
-            if (!el) return;
-            const [instance] = Draggable.create(el, {onPress: () => focusWindow(windowKey)});
+            if (window.matchMedia("(min-width: 641px)").matches) {
+                const el = ref.current;
+                if (!el) return;
+                const [instance] = Draggable.create(el, {onPress: () => focusWindow(windowKey)});
 
-            return () => instance.kill();
+                return () => instance.kill();
+            }
         }, []);
 
         useLayoutEffect(() => {
@@ -38,6 +49,11 @@ const WindowWrapper = (Component, windowKey) => {
         }, [isOpen]);
 
         return <section id={windowKey} ref={ref} style={{zIndex}} className="absolute">
+            <div className="sm:hidden absolute top-4 right-4 z-50">
+                <button onClick={() => closeWindow(windowKey)} className="bg-red-500 rounded-full p-2">
+                    <X size={16} color="white" />
+                </button>
+            </div>
             <Component {...props} />
         </section>
     };

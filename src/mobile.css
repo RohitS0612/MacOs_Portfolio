@@ -1,0 +1,45 @@
+
+@media (max-width: 640px) {
+    /* Hide desktop elements */
+    nav, #dock {
+        display: none;
+    }
+
+    body {
+        background-image: url("/images/wallpaper2.png");
+    }
+
+    #welcome {
+        display: none;
+    }
+
+    #home {
+        display: block;
+    }
+
+    #mobile-header {
+        @apply flex justify-between items-center px-4 py-2 text-white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    #mobile-dock {
+        @apply absolute bottom-5 left-1/2 -translate-x-1/2 z-50 select-none;
+    }
+
+    #mobile-dock .dock-container {
+        @apply backdrop-blur-md justify-between rounded-2xl p-1.5 flex items-end gap-1.5;
+        background-color: var(--dock-background);
+    }
+
+    #mobile-dock .dock-icon {
+        @apply size-14 cursor-pointer;
+    }
+
+    #mobile-dock .dock-icon img {
+        @apply object-cover object-center;
+    }
+}

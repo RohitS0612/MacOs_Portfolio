@@ -3,13 +3,14 @@ import WindowWrapper from "../hoc/WindowWrapper"
 import useLocationStore from "../store/location"
 import { locations } from "../constants"
 import useWindowStore from "../store/window"
-import React from "react"
+import React, { useState } from "react"
 import clsx from "clsx"
-import { Search } from "lucide-react"
+import { Search, Menu } from "lucide-react"
 
 const Finder = () => {
   const { activeLocation, setActiveLocation } = useLocationStore();
   const { openWindow } = useWindowStore();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // console.log("active location ", activeLocation?.children);
 
@@ -46,11 +47,16 @@ const Finder = () => {
     <>
       <div id="window-header">
         <WindowControls target="finder" />
-        <Search className="icon" />
+        <div className="flex items-center gap-2">
+            <button className="sm:hidden" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+                <Menu size={16} />
+            </button>
+            <Search className="icon" />
+        </div>
       </div>
 
       <div className="flex h-full">
-        <div className="sidebar">
+        <div className={clsx("sidebar", !isSidebarOpen && "max-sm:hidden")}>
           {renderList("Favorites", Object.values(locations))}
           {renderList("Work", locations?.work?.children)}
         </div>
